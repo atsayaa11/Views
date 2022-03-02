@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OnlineMobiles.Models.Product>
+
+@{
+    ViewBag.Title = "EZShop-Home";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductColour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductFeature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductCost)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductColour)
+        </td>
+        <td>
+            <img src="@Url.Content(item.ProductImage)" height="100" width="100" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductFeature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductCost)
+        </td>
+    </tr>
+}
+
+</table>

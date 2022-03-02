@@ -1,0 +1,14 @@
+﻿@if (Session["userName"] != null)
+{
+    @Html.ActionLink("Hi " + @Session["userName"].ToString() + "!", "Home", "Home", routeValues: null, htmlAttributes: new { @class = "detail" })
+    <a href="@Url.Action("LogOut","Account")" class="account">Log Out</a>
+   
+}
+else
+{
+    <div class="navaccount">
+        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "register" })
+        @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "login" })
+    </div>
+}
+

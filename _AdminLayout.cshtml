@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/HomeStyles.css" rel="stylesheet" />
+    <link href="~/Content/Accounts.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="topnav">
+        <div class="navtitle">
+            <h1 class="navlink">EZShop</h1>
+        </div>
+        <div class="navcontent">
+            <ul class="titlelist">
+                <li>@Html.ActionLink("Product", "Product", "Admin", new { @class = "navlink" })</li>
+                <li>@Html.ActionLink("Customers", "Customers", "Admin", new { @class = "navlink" })</li>
+
+            </ul>
+        </div>
+        <div class="navaccount">
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
